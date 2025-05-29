@@ -1,0 +1,30 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Файлы среды
+.env
+.env.*
+
+# SQLite база данных
+db.sqlite3
+
+# Python
+__pycache__
+*.pyc
+*.log
+*.pot
+
+# Локальные миграции
+*/migrations/0*
+
+# Результаты тестов
+.coverage
+htmlcov/
+
+# IDE / редакторы
+.vscode/
+.idea/
+*.swp
+*~
