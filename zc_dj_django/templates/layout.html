@@ -18,9 +18,9 @@
     {% block title %}
     {% endblock %}
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
     {% include 'includes/menu.html' %}
-    <div class="container-fluid d-flex pt-5 mt-4">
+    <div class="container-fluid d-flex pt-5 mt-4 flex-grow-1">
         <aside class="left-nav bg-white p-3 shadow-sm rounded me-4" style="width: 250px;">
             {% block left_nav_logo %}
                 <img src="{% static 'img/cat-progr.png' %}" alt="Логотип" width="100" class="d-block mx-auto mb-3 rounded-circle">
@@ -41,7 +41,10 @@
             {% endblock %}
         </main>
     </div>
+{% include 'includes/footer.html' %}
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
