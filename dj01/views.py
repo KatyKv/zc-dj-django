@@ -7,8 +7,8 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse(
         '<h1>Первый проект на Django</h1>'
-        '<p><a href="/data">Ссылка на страницу data</a></p>'
-        '<p><a href="/test">Ссылка на страницу test</a></p>'
+        '<p><a href="/dj01/data">Ссылка на страницу /data</a></p>'
+        '<p><a href="/dj01/test">Ссылка на страницу /test</a></p>'
     )
 
 def new(request):

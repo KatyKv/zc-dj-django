@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dj02/css/dj02.css' %}">
+{% endblock %}
+
+{% block left_nav_title_text %}
+    CatDjango
+{% endblock %}
+
+{% block left_nav_items %}
+    <li><a href="{% url 'dj02:index' %}">Главная</a></li>
+    <li><a href="{% url 'dj02:day1' %}">День1</a></li>
+    <li><a href="{% url 'dj02:day2' %}">День2</a></li>
+    <li><a href="{% url 'dj02:day3' %}">День3</a></li>
+{% endblock %}
+

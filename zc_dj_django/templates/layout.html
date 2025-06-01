@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+    {% include 'includes/menu.html' %}
+    <aside class="left-nav">
+        {% block left_nav_logo %}
+            <img src="{% static 'img/cat-progr.png' %}" alt="Логотип" width="100">
+        {% endblock %}
+
+        {% block left_nav_title %}
+            <span class="left-nav-title">{% block left_nav_title_text %}   {% endblock %}</span>
+        {% endblock %}
+
+        <ul class="left-nav-list">
+            {% block left_nav_items %}
+            {% endblock %}
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
