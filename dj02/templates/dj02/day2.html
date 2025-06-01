@@ -1,10 +1,16 @@
 {% extends 'dj02/base.html' %}
+{% load static %}
 
 {% block title %}
    <title>day2</title>
 {% endblock %}
+
 {% block content %}
-   <h2>День 2: Первый проект</h2>
-   <p>Ура! Я создал свой первый проект: <code>django-admin startproject mysite</code></p>
-   <p>Теперь я могу запустить сервер и увидеть приветствие Django!</p>
+<div class="card shadow-sm p-4 mb-4 bg-white">
+  <h2 class="text-info">День 2: Первый проект</h2>
+  <p class="lead">Ура! Я создал свой первый проект: <code>django-admin startproject mysite</code></p>
+  <p>Теперь я могу запустить сервер и увидеть приветствие Django!</p>
+  <pre class="bg-light p-2 rounded"><code>python manage.py runserver</code></pre>
+  <img src="{% static 'dj02/img/cat-happy.png' %}" alt="Котик доволен" class="img-fluid rounded mt-3">
+</div>
 {% endblock %}

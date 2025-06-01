@@ -1,10 +1,15 @@
 {% extends 'dj02/base.html' %}
+{% load static %}
 
 {% block title %}
    <title>day3</title>
 {% endblock %}
+
 {% block content %}
-   <h2>День 3: Шаблоны</h2>
-   <p>Оказывается, можно делать разные страницы и не повторять один и тот же HTML каждый раз!</p>
-   <p>Благодаря шаблонам всё красиво и удобно!</p>
+<div class="card shadow-sm p-4 mb-4 bg-white">
+  <h2 class="text-warning">День 3: Шаблоны</h2>
+  <p class="lead">Оказывается, можно делать разные страницы и не повторять один и тот же HTML каждый раз!</p>
+  <p>Благодаря шаблонам всё красиво и удобно!</p>
+  <img src="{% static 'dj02/img/cat-thinking.png' %}" alt="Котик задумчив" class="img-fluid rounded mt-3">
+</div>
 {% endblock %}

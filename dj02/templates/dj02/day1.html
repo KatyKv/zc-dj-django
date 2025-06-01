@@ -1,10 +1,16 @@
 {% extends 'dj02/base.html' %}
+{% load static %}
 
 {% block title %}
    <title>day1</title>
 {% endblock %}
+
 {% block content %}
-   <h2>День 1: Установка Django</h2>
-   <p>Поставил Python. Поставил pip. А теперь пытаюсь установить Django...</p>
-   <p><em>"Command not found"</em> — что за жизнь?</p>
+<div class="card shadow-sm p-4 mb-4 bg-white">
+  <h2 class="text-danger">День 1: Установка Django</h2>
+  <p class="lead">Поставил Python. Поставил pip. А теперь пытаюсь установить Django...</p>
+  <p><em>"Command not found"</em> — что за жизнь?</p>
+  <pre class="bg-light p-2 rounded"><code>pip install django</code></pre>
+  <img src="{% static 'dj02/img/cat-confused.png' %}" alt="Котик в замешательстве" class="img-fluid rounded mt-3">
+</div>
 {% endblock %}

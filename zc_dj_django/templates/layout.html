@@ -6,32 +6,42 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     {% block extra_css %}
     {% endblock %}
+
     {% block title %}
     {% endblock %}
 </head>
-<body>
+<body class="bg-light">
     {% include 'includes/menu.html' %}
-    <aside class="left-nav">
-        {% block left_nav_logo %}
-            <img src="{% static 'img/cat-progr.png' %}" alt="Логотип" width="100">
-        {% endblock %}
-
-        {% block left_nav_title %}
-            <span class="left-nav-title">{% block left_nav_title_text %}   {% endblock %}</span>
-        {% endblock %}
-
-        <ul class="left-nav-list">
-            {% block left_nav_items %}
+    <div class="container-fluid d-flex pt-5 mt-4">
+        <aside class="left-nav bg-white p-3 shadow-sm rounded me-4" style="width: 250px;">
+            {% block left_nav_logo %}
+                <img src="{% static 'img/cat-progr.png' %}" alt="Логотип" width="100" class="d-block mx-auto mb-3 rounded-circle">
             {% endblock %}
-        </ul>
-    </aside>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
 
+            {% block left_nav_title %}
+                <h5 class="text-center text-primary">{% block left_nav_title_text %}CatDjango{% endblock %}</h5>
+            {% endblock %}
+
+            <ul class="list-group mt-3">
+                {% block left_nav_items %}
+                {% endblock %}
+            </ul>
+        </aside>
+
+        <main class="flex-grow-1">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

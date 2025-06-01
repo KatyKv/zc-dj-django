@@ -3,11 +3,22 @@
 {% block title %}
    <title>Учебный проект Django</title>
 {% endblock %}
+
 {% block content %}
-    <h1>Уроки по Django</h1>
-    <ul>
+    <h1 class="mb-4">📚 Уроки по Django</h1>
+    <p class="lead mb-4">Здесь живёт котик, который пробует себя в Django 😸</p>
+
+    <div class="row g-4">
         {% for lesson in lessons %}
-            <li><a href="{{ lesson.url }}">{{ lesson.name }}</a></li>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">{{ lesson.name }}</h5>
+                        <p class="card-text">{{ lesson.description }}</p>
+                        <a href="{{ lesson.url }}" class="btn btn-outline-primary mt-auto">Перейти к уроку</a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

@@ -1,9 +1,14 @@
 {% extends 'dj02/base.html' %}
+{% load static %}
 
 {% block title %}
    <title>dj02</title>
 {% endblock %}
+
 {% block content %}
-   <h2>Добро пожаловать в мой дневник!</h2>
-   <p>Я — котик, который решил освоить Django. Это будет весело.</p>
+<div class="card shadow-sm p-4 mb-4 bg-white">
+  <h2 class="text-success">Добро пожаловать в мой дневник!</h2>
+  <p class="lead">Я — котик, который решил освоить Django. Это будет весело.</p>
+  <img src="{% static 'dj02/img/cat-welcome.png' %}" alt="Котик приветствует" class="img-fluid rounded mt-3">
+</div>
 {% endblock %}
