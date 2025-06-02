@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dj03_news/css/dj03.css' %}">
+{% endblock %}
+
+{% block left_nav_title_text %}
+    News
+{% endblock %}
+
+{% block left_nav_items %}
+    <li><a href="{% url 'dj03_news:index' %}">Главная</a></li>
+{% endblock %}
+

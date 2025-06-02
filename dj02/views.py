@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# ВАЖНО! request - обязательный параметр!
 def index(request):
     return render(request, 'dj02/index.html')
 

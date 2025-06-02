@@ -17,12 +17,17 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+
 from home import views as home_views
 
 urlpatterns = [
     path("", home_views.index, name='home'),
     path("admin/", admin.site.urls),
     path("dj01/", include('dj01.urls', namespace='dj01')),
-    path("dj02/", include('dj02.urls', namespace='dj02'))
+    path("dj02/", include('dj02.urls', namespace='dj02')),
+    path("dj03/", RedirectView.as_view(url='/news/')),
+    path("dj03/<path:path>", RedirectView.as_view(url='/news/%(path)s')),
+    path("news/", include('dj03_news.urls', namespace='dj03_news')),
 ]
 

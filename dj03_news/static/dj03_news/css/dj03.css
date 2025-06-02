@@ -1,0 +1,14 @@
+main {
+    min-width: 0;
+    padding: 2rem;
+}
+
+.left-nav-title {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.card-img-top {
+    max-height: 10px; /* Максимальная высота */
+    object-fit: contain; /* Сохраняет пропорции, не обрезает края */
+}

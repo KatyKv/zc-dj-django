@@ -13,5 +13,10 @@ def index(request):
             'url': reverse('dj02:index'),
             'description': 'Шаблоны и статические файлы: как красиво оформить сайт.',
         },
+        {
+            'name': 'Урок 3 - dj03_news',
+            'url': reverse('dj03_news:index'),
+            'description': 'Работа с моделями: создание, миграции, связь с пользователями и вывод данных.',
+        },
     ]
     return render(request, 'home/index.html', {'lessons': lessons})

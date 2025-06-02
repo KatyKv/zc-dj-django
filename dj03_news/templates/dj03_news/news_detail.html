@@ -1,0 +1,58 @@
+{% extends 'dj03_news/base.html' %}
+{% load static %}
+
+{% block title %}
+   <title>{{ article.title }}</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body">
+                    <h1 class="card-title text-primary mb-4">{{ article.title }}</h1>
+
+                    <p class="text-muted small">
+                        <i class="bi bi-calendar-event"></i> {{ article.publication_date|date:"d.m.Y H:i" }} |
+                        <i class="bi bi-person"></i> {{ article.author }}
+                    </p>
+
+                    <p class="card-text">{{ article.text }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок навигации -->
+        <div class="mt-5 d-flex align-items-center justify-content-between">
+            <!-- Левая кнопка: Предыдущая -->
+            {% if prev_news %}
+                <a href="{% url 'dj03_news:news_detail' pk=prev_news.pk %}" class="btn btn-outline-primary">
+                    ← {{ prev_news.title|truncatechars:20 }}
+                </a>
+            {% else %}
+                <div></div>
+            {% endif %}
+
+            <!-- Центральная кнопка: Назад -->
+            <div class="text-center flex-grow-1">
+                <a href="{% url 'dj03_news:index' %}" class="btn btn-outline-secondary">
+                    ← Вернуться к новостям
+                </a>
+            </div>
+
+            <!-- Правая кнопка: Следующая -->
+            {% if next_news %}
+                <a href="{% url 'dj03_news:news_detail' pk=next_news.pk %}" class="btn btn-outline-primary">
+                    {{ next_news.title|truncatechars:20 }} →
+                </a>
+            {% else %}
+                <div></div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
