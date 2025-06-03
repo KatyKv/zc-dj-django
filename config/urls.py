@@ -30,5 +30,6 @@ urlpatterns = [
     path("dj03/<path:path>", RedirectView.as_view(url='/news/%(path)s')),
     path("news/", include('dj03_news.urls', namespace='dj03_news')),
     path("", include('dj04_forms_news.urls', namespace='dj04_forms_news')),
+    path("movies/", include('dj04_movies.urls', namespace='dj04_movies')),
 ]
 

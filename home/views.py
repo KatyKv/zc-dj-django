@@ -19,5 +19,10 @@ def index(request):
             'description': 'Урок 3 - Работа с моделями: создание, миграции, связь с пользователями и '
                            'вывод данных. Урок 4 - Работа с формой: создание новости',
         },
+        {
+            'name': 'Урок 4 - dj04_movies',
+            'url': reverse('dj04_movies:index'),
+            'description': 'Урок 4 - Работа с формой: создание отзыва к фильму',
+        },
     ]
     return render(request, 'home/index.html', {'lessons': lessons})

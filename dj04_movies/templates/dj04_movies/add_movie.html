@@ -1,0 +1,41 @@
+{% extends 'dj04_movies/base.html' %}
+{% load static %}
+
+{% block title %}
+   <title>Add movie</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-12">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="card-title text-center mb-4">📝 Добавить отзыв о фильме</h2>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            {{ form.movie_name }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.short_description }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.review }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.author }}
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Добавить отзыв</button>
+                        </div>
+                    </form>
+                   <p class="text-error">{{ error }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

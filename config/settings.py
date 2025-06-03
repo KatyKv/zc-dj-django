@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "dj02",
     "dj03_news",
     "dj04_forms_news",
+    "dj04_movies",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
