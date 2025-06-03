@@ -14,9 +14,10 @@ def index(request):
             'description': 'Шаблоны и статические файлы: как красиво оформить сайт.',
         },
         {
-            'name': 'Урок 3 - dj03_news',
+            'name': 'Урок 3 - dj03_news / Урок 4 - dj04_forms_news ',
             'url': reverse('dj03_news:index'),
-            'description': 'Работа с моделями: создание, миграции, связь с пользователями и вывод данных.',
+            'description': 'Урок 3 - Работа с моделями: создание, миграции, связь с пользователями и '
+                           'вывод данных. Урок 4 - Работа с формой: создание новости',
         },
     ]
     return render(request, 'home/index.html', {'lessons': lessons})
